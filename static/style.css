@@ -1,0 +1,78 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Title */
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Table Styles */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table Header */
+th {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+}
+
+/* Table Rows */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alternating Row Colors */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover Effect */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    table {
+        width: 95%;
+    }
+    
+    th, td {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+/* Add Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Animation to New Rows */
+.new-row {
+    animation: fadeIn 0.6s ease-in-out;
+}
