@@ -1,104 +1,72 @@
-# 📊 Amazon Price Tracker (Live & Real-Time)
----
-THIS RESPOSTIROY IS CURRENTLY UNDER DEVELOPMENT, DO NOT TAKE THIS AS FINAL CODE.
+Overview
+This project tracks the prices of various Amazon products and stores their price history in a CSV file. Additionally, it displays the price history on a web interface built using Flask. The application scrapes product details such as title and price from Amazon, stores the collected data, and allows you to view the price trends over time.
 
-A real-time Amazon price tracker that **monitors price changes** and provides **instant notifications** when a price drops. It uses **Flask, WebSockets, JavaScript, and CSS animations** to display data dynamically.
+Features
+Product Price Tracking: The program scrapes product prices from Amazon product pages.
+CSV Storage: Stores the scraped product price history in a CSV file for easy access and record-keeping.
+Web Interface: A simple Flask app that reads the stored data and displays it on a web page.
+Rotating User-Agent: Uses a rotating list of user-agent strings to prevent getting blocked during web scraping.
+Rate Limiting: Incorporates a delay between scraping requests to avoid hitting Amazon’s servers too frequently.
+Requirements
+Python 3.x
+Flask: A lightweight web framework for Python.
+BeautifulSoup: A library used to scrape data from HTML and XML documents.
+Requests: A library for making HTTP requests.
+CSV: Standard Python module for reading/writing CSV files.
+Installation
+Step 1: Install Python Dependencies
+To install the required dependencies, you can use pip to install the necessary libraries. Run the following commands:
 
----
+bash
+Copy
+Edit
+pip install flask beautifulsoup4 requests
+Step 2: Download the Project Files
+Clone or download the project files to your local machine. Ensure the price_history.csv file exists in your project folder to store the price data.
 
-## 🚀 Features
+Step 3: Running the Application
+Scraping Prices:
 
-✅ **Real-Time Updates** - Prices update automatically using WebSockets.  
-✅ **Desktop Notifications** - Get alerted when a price drops.  
-✅ **Sound Alerts** - Beep sound when a deal happens.  
----
+You can manually run the Python script that scrapes the product prices and updates the price_history.csv file by running the following command:
+bash
+Copy
+Edit
+python price_tracker.py
+The script will scrape the product prices from Amazon and append the price data along with timestamps into the price_history.csv file.
 
-## 🛠️ Tech Stack
+Starting the Flask Application:
 
-- **Backend:** Flask, Flask-SocketIO
-- **Frontend:** HTML, CSS, JavaScript (WebSockets)
-- **Data Storage:** CSV (for price history)
-- **Python Version:** 3.8+
-
----
-
-## 📦 Installation Guide
-
-### 1️⃣ Clone the Repository
-```sh
-git clone https://github.com/yourusername/amazon-price-tracker.git
-cd amazon-price-tracker
-```
-
-### 2️⃣ Install Dependencies
-```sh
-pip install flask-socketio eventlet
-```
-
-### 3️⃣ Run the Flask Server
-```sh
+Run the Flask app using the following command:
+bash
+Copy
+Edit
 python app.py
-```
+This will start a local server and you can access the web interface in your browser at:
 
-### 4️⃣ Open in Browser
-Go to: `http://127.0.0.1:5000/`
+cpp
+Copy
+Edit
+http://127.0.0.1:5000/
+Step 4: Viewing the Data
+Once the Flask application is running, open your browser and visit http://127.0.0.1:5000/ to view the price history of the tracked products.
 
----
+How It Works
+Scraping the Data: The script scrapes Amazon product pages using requests and BeautifulSoup. It collects the product title and price for each product.
 
-## 🖥️ Usage Guide
+Storing the Data: The price data is stored in a CSV file (price_history.csv) with columns for the product name, timestamp, and price.
 
-### Viewing Live Prices
-1️⃣ Open `http://127.0.0.1:5000/` in your web browser.  
-2️⃣ The product prices update automatically every few seconds.  
+Displaying the Data: The Flask app reads the data from the CSV file and displays it in a table format on the web page, allowing you to track how prices change over time.
 
-### Enabling Notifications
-1️⃣ When prompted, click "Allow" to enable desktop notifications.  
-2️⃣ You will get notified instantly when a price drops.  
+CSV File Structure
+The CSV file is structured as follows:
 
-### Managing Sound Alerts
-1️⃣ Click the "🔊 Mute Sound" button to toggle sound notifications.  
-2️⃣ When muted, no sound will play on price drops.  
-
-### Dark Mode
-1️⃣ The website automatically adjusts between light and dark mode based on your browser's preference.  
-2️⃣ No manual toggle required.  
-
----
-
-## 📚 Sources & References
-
-- **Flask WebSockets (SocketIO):** [Flask-SocketIO Docs](https://flask-socketio.readthedocs.io/)  
-- **Desktop Notifications:** [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Notification)  
-- **CSS Animations:** [W3Schools](https://www.w3schools.com/css/css3_animations.asp)  
-- **Dark Mode Styling:** [CSS Tricks](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)  
-
----
-
-## 🎯 Future Enhancements
-🚀 **Database Integration** - Store price history in MySQL or Firebase.  
-📊 **Graph Visualization** - Display price trends over time.  
-📩 **Email Alerts** - Get email notifications for price drops.  
-🚀 **Auto Dark Mode** - Adapts to the user's browser preference.  
-🚀 **Mute Button** - Disable sound alerts easily.  
-🚀 **Smooth Animations** - New price data appears with fade-in effects.  
-🚀 **Mobile-Friendly** - Works on desktops, tablets, and smartphones.
-
----
-
-## 🤝 Contributing
-1️⃣ **Fork the Repository**  
-2️⃣ **Create a New Branch** (`feature-branch`)  
-3️⃣ **Commit Your Changes**  
-4️⃣ **Push to GitHub**  
-5️⃣ **Create a Pull Request**  
-
----
-
-## 📝 License
-This project is licensed under the **MIT License**. Feel free to use and modify!  
-
----
-
-**Made by Omar (Jetshark)
-
-
+Product Name	Date	Price
+Product 1	2025-02-12 10:30 AM	£99.99
+Product 2	2025-02-12 10:32 AM	£149.00
+...	...	...
+Columns:
+Product Name: The name of the tracked product.
+Date: The timestamp of when the price was recorded.
+Price: The price of the product at the time of scraping.
+License
+This project is open-source and free to use. Feel free to modify and contribute to it!
