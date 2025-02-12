@@ -1,4 +1,6 @@
 # 📊 Amazon Price Tracker (Live & Real-Time)
+---
+THIS RESPOSTIROY IS CURRENTLY UNDER DEVELOPMENT, DO NOT TAKE THIS AS FINAL CODE.
 
 A real-time Amazon price tracker that **monitors price changes** and provides **instant notifications** when a price drops. It uses **Flask, WebSockets, JavaScript, and CSS animations** to display data dynamically.
 
