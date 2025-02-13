@@ -68,8 +68,8 @@ Simply **open `index.html` in a browser** (no server required). It will automati
 
 ## 🚀 Future Improvements
 - ✅ **Add Price Change Notifications**
-- ✅ **Store Historical Price Data**
+- ✅ **Notify when prices change**
 - ✅ **Dark Mode UI**
 
 ---
-👨‍💻 **Developed by [Your Name]** | 🛠 **Built with Python, HTML, CSS, and JavaScript**
+👨‍💻 **Developed by   Omar Sajjad** | 🛠 **Built with Python, HTML, CSS, and JavaScript**
