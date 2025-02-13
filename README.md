@@ -1,7 +1,7 @@
-# Amazon Price Tracker (Vanilla HTML + JSON)
+# Amazon Price Tracker (Vanilla HTML + CSS + JavaScript + Python + JSON)
 
 ## 📌 Overview
-This is a simple **Amazon Price Tracker** built using **vanilla HTML, JavaScript, and JSON**. The script fetches product details from Amazon, saves them in a JSON file, and dynamically displays them on a webpage.
+This is a simple **Amazon Price Tracker** built using **vanilla HTML, JavaScript, CSS, Python and JSON**. The script fetches product details from Amazon, saves them in a JSON file, and dynamically displays them on a webpage.
 
 ## 🎯 Features
 ✅ **Scrapes Amazon Product Data** (Title, Price, Image, Rating)  
