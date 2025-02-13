@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Amazon Price Tracker</title>
+</head>
+<body>
+    <h2>Amazon Price Tracker</h2>
+    <input type="text" id="search" placeholder="Search products..." onkeyup="searchTable()">
+    <table id="priceTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Product Name</th>
+                <th onclick="sortTable(1)">Date</th>
+                <th onclick="sortTable(2)">Price</th>
+                <th>Image</th>
+                <th onclick="sortTable(4)">Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        async function loadJSON() {
+            try {
+                const response = await fetch('/price_history.json');
+                if (!response.ok) throw new Error("JSON file not found");
+                const data = await response.json();
+                let tableBody = document.querySelector("#priceTable tbody");
+                tableBody.innerHTML = "";
+                if (data.length === 0) {
+                    document.getElementById("errorMessage").style.display = "block";
+                    return;
+                }
+                data.forEach(item => {
+                    let tr = document.createElement("tr");
+                    tr.innerHTML = `
+                        <td>${item.name}</td>
+                        <td>${item.date}</td>
+                        <td>${item.price}</td>
+                        <td><img src="${item.image}" alt="Product Image"></td>
+                        <td>${item.rating}</td>
+                    `;
+                    tableBody.appendChild(tr);
+                });
+            } catch (error) {
+                document.getElementById("errorMessage").style.display = "block";
+            }
+        }
+        loadJSON();
+    </script>
+</body>
+</html>
